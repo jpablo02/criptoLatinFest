@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import path from "path";
-import { ConnectButtons } from "./ConectButtons";
+import { ConnectButtons } from "../components/ConectButtons";
 
 const links = [
   {

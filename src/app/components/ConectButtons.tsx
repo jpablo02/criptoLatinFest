@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useAccount, useConnect, useDisconnect, useWriteContract } from "wagmi";
 // import { ScrollArea } from "./scroll-area";
-import { MintNFT } from "../../app/mint-nft";
+import { MintNFT1 } from "../mint-nft1";
 
 export const ConnectButtons = () => {
   const { address, isConnected } = useAccount();
