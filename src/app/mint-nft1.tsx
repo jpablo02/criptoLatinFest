@@ -20,7 +20,7 @@ export function MintNFT1() {
   const router = useRouter();
 
   const isWalletConnected = isConnected && address;
-  const isCorrectNetwork = chainId === 42161; // Arbitrum one ID
+  const isCorrectNetwork = chainId === 81; // Arbitrum one ID
   const canMint = isWalletConnected && isCorrectNetwork;
   const isAlreadyMinted = !!hash; // Nuevo estado para controlar el mint
 
@@ -29,7 +29,7 @@ export function MintNFT1() {
     if (!canMint || isAlreadyMinted) return;
 
     writeContract({
-      address: "0x83eC0903201554fA805d62feE04772805b60Da27",
+      address: "0x1D4de18300d2869B50632A5Fc67c1Ddd1A07F4b6",
       abi,
       functionName: "safeMint",
       args: [address as Address],
@@ -43,7 +43,7 @@ export function MintNFT1() {
           <TooltipTrigger asChild>
             <Button
               type="submit"
-              disabled={!canMint || isPending || isAlreadyMinted} // Aquí añadimos la condición
+              disabled={!canMint || isPending || isAlreadyMinted} 
               className={`transition-all ${
                 !canMint || isAlreadyMinted
                   ? "bg-gray-500 hover:bg-gray-500 cursor-not-allowed"
@@ -77,20 +77,7 @@ export function MintNFT1() {
         </Tooltip>
       </TooltipProvider>
 
-      {hash && (
-        <div className="mt-4 flex flex-col md:flex-row gap-4">
-          <a
-            href={`https://arbiscan.io/tx/${hash}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-blue-500 underline"
-          >
-            View on Arbiscan
-          </a>
-
-          
-        </div>
-      )}
+      
     </form>
   );
 }
