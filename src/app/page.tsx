@@ -23,7 +23,7 @@ function App() {
             {/*text */}
 
             <div className="text-center col-auto xl:text-left order-2 xl:order-none pr-0 z-20">
-              <Link href="/suspended" className="">
+              <Link href="/" className="">
                 <div className="flex items-center  col-span-1 hover:scale-110   hover:shadow-lg hover:shadow-orange-500/50">
                   <img
                     src="https://chocolate-legislative-lamprey-152.mypinata.cloud/ipfs/QmXkcpjzj9TqkNy1prxvtSnNrZVyQq6qpwSGgNHqReizMK/Designer1.png"
