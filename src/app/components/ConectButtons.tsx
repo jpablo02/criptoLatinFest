@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { useAccount, useConnect, useDisconnect, useWriteContract } from "wagmi";
-// import { ScrollArea } from "./scroll-area";
-import { MintNFT1 } from "../mint-nft1";
+import { useAccount, useConnect, useDisconnect,useWriteContract } from "wagmi";
+import { ScrollArea } from "../../components/ui/scroll-area";
+
 
 export const ConnectButtons = () => {
   const { address, isConnected } = useAccount();
@@ -67,7 +67,25 @@ export const ConnectButtons = () => {
         </>
       )}
 
-      
+      {isOpen && !isConnected && (
+        <div className=" text-sm absolute flex bg-gray-400 border-0 border-gray-400 mt-2 py-2 rounded-lg shadow-lg w-40">
+          <ScrollArea className="h-40">
+            {connectors.map((connector) => (
+              <button
+                key={connector.id}
+                onClick={() => {
+                  connect({ connector });
+                  setIsOpen(false); // Close the dropdown after selecting a wallet
+                }}
+                type="button"
+                className="block w-full text-left px-4 py-2 text-black hover:bg-gray-600"
+              >
+                {connector.name}
+              </button>
+            ))}
+          </ScrollArea>
+        </div>
+      )}
     </div>
   );
 };
